@@ -26,8 +26,9 @@ namespace StudentClass.Controllers
 
             List<StudentModel> models = new();
 
-            using var command = new MySqlCommand("SELECT * FROM students;", _connection);
+            using var command = new MySqlCommand("SELECT * FROM studentsclass;", _connection);
             using var reader = command.ExecuteReader();
+            List<StudentClassModel> students = new List<StudentClassModel>();
             while (reader.Read())
             {
                 StudentModel model = new()
